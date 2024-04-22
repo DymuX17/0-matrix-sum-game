@@ -42,15 +42,15 @@ if __name__ == '__main__':
         suma_el = 0
         for element in matrix_suma.T:
             suma_el += element
-        print('suma_el: ', suma_el)
+        print('Sum of your matrix: ', suma_el)
+        if suma_el != 0:
+            print('If you want the game to be fair change values of predefined matrix')
+        # this functionality writes down sum of it's elements
 
-    print('suma twojej macierzy: ', sum(input_matrix))
-    # this functionality writes down sum of it's elements
     [Ny, Nx] = input_matrix.shape
     role = 'max-min'  # This is a place where you could change your players roles
 
     print(f'\nMatrix shape is Nx:{Nx}, Ny:{Ny}\n')
-    # def d1(matrix, role):
 
     if role == 'max-min':
         input_matrix = np.transpose(input_matrix)
