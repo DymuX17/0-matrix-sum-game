@@ -1,11 +1,6 @@
 import numpy as np
 from matrix_check import matrix_input
 
-# sprawdzić poprawność działania programu na podstawie różnych macierzy
-# dodać funkcjonwalność macierzy o sumie zerowej do modułu
-# stworzyć listę lub krotkę linii bezpiecznych, a następnie sprawdzić istnienie punktu siodłowego
-# czyli nakładanie się + np. największa w danej kolumnie, najmniejsza w danym wierszu
-
 
 def safe_lines_maxmin(matrix):
     max_in_row = np.max(matrix, axis=0)  # x axis
@@ -18,6 +13,7 @@ def safe_lines_maxmin(matrix):
     for i in range(amount_safe_lines):
         print(safe_position[i][1])
     return min_of_them
+
 
 def safe_lines_minmax(matrix):
     min_in_col = np.min(matrix, axis=1)  # y axis
@@ -40,11 +36,18 @@ if __name__ == '__main__':
                                   [2, 2, 2, 0, 2, 2],
                                   [-2, 4, -4, 0, 2, 2],
                                   [-2, 4, -4, 0, 2, -2],
-                                  [-2, -3, -2, -2, 1, -1]])
+                                  [-2, -3, -2, -2, 1, -2]])
+        # This is a predefined matrix which you can save for later usages
+        print('Sum of predefined matrix in each column is: ', matrix_suma := sum(input_matrix))
+        suma_el = 0
+        for element in matrix_suma.T:
+            suma_el += element
+        print('suma_el: ', suma_el)
 
     print('suma twojej macierzy: ', sum(input_matrix))
+    # this functionality writes down sum of it's elements
     [Ny, Nx] = input_matrix.shape
-    role = 'max-min'
+    role = 'max-min'  # This is a place where you could change your players roles
 
     print(f'\nMatrix shape is Nx:{Nx}, Ny:{Ny}\n')
     # def d1(matrix, role):
